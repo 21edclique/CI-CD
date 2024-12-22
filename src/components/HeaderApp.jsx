@@ -14,7 +14,9 @@ import "../styles/HeaderApp.css";
 const HeaderApp = ({ setModalVisible }) => {
   return (
     <Header className="header-app">
-      <h1 style={{ color: "white" }}>Control de Gastos Desarrollo Asistido Por Software (DAS) </h1>
+      <h1 style={{ color: "white" }}>Control de Gastos  </h1>
+      <br />
+      <h1 style={{ color: "white" }}>Desarrollo Asistido Por Software (DAS)</h1>
       <Button
         type="primary"
         onClick={() => setModalVisible(true)}
