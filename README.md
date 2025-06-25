@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Práctica CI/CD con GitHub Actions 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una práctica de integración y entrega continua (CI/CD) utilizando **GitHub Actions**. El objetivo es automatizar procesos clave como la instalación de dependencias, ejecución de pruebas y despliegue, garantizando así una entrega más rápida y confiable del software.
 
-## Available Scripts
+## 📁 Estructura del Proyecto
 
-In the project directory, you can run:
+.github/workflows/ # Contiene los archivos de configuración de GitHub Actions
+public/ # Archivos estáticos públicos
+src/ # Código fuente de la aplicación
+README.md # Documentación del proyecto
+package.json # Dependencias y scripts del proyecto
 
-### `npm start`
+yaml
+Copiar
+Editar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ⚙️ Tecnologías Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Node.js**
+- **React**
+- **GitHub Actions** para CI/CD
+- **npm** como gestor de paquetes
 
-### `npm test`
+## 📄 Funcionalidades de CI/CD
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ✅ Instalación automática de dependencias
+- ✅ Ejecución de pruebas (si están configuradas)
+- ✅ Despliegue automático (opcional según configuración)
+- ✅ Validación de ramas antes del merge
 
-### `npm run build`
+## 🚀 Configuración de GitHub Actions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Los workflows se encuentran en la carpeta `.github/workflows/`. Puedes definir acciones como:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```yaml
+name: CI/CD Pipeline
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+on:
+  push:
+    branches: [main]
 
-### `npm run eject`
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+      - name: Install dependencies
+        run: npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+      - name: Run tests
+        run: npm test
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+      - name: Build project
+        run: npm run build
+🛠️ Cómo ejecutar localmente
+Clona el repositorio:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash
+Copiar
+Editar
+git clone https://github.com/tu-usuario/tu-repo.git
+cd tu-repo
+Instala las dependencias:
 
-## Learn More
+bash
+Copiar
+Editar
+npm install
+Ejecuta la aplicación:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copiar
+Editar
+npm run dev
+📚 Aprendizajes Obtenidos
+Implementación de flujos de trabajo automatizados con GitHub Actions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Mejores prácticas en integración continua
 
-### Code Splitting
+Automatización de pruebas y despliegue
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+✅ Estado del Proyecto
+🚧 En desarrollo / ✅ Completado
 
-### Analyzing the Bundle Size
+🤝 Autor
+@21edclique
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
